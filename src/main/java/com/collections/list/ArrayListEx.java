@@ -54,8 +54,8 @@ public class ArrayListEx {
 
         System.out.println("\n Get Even collection ");
 
-          List<Integer> evenList =       list.stream()
-                .filter((element) -> element != null && element % 2 == 0)
+          List<Integer> evenList =
+                  list.stream().filter((element) -> element != null && element % 2 == 0)
                 .collect(Collectors.toList());
           System.out.println(evenList);
     }
