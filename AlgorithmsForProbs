@@ -1,0 +1,118 @@
+for(int index = 0 ; index < arr.length ; index++)
+{
+	for(int j = index+1 ; j < arr.length; j++)
+	{
+		if(arr[index] == arr[j])
+		{
+		return true;
+		}
+	}
+}
+
+return false;
+
+
+TC: O(n^2)
+SC: O(1)
+
+
+TC : O(n)
+SC : O(n)
+*********
+
+
+Solution1 :
+
+Input: s = "anagram", t = "nagaram"
+
+
+a = 97 --> z = 121 [26 chars]
+
+
+int[] arr = new int[26];
+
+
+'a' - 97 = 97 - 97 = 0
+'z' - 97 = 122 - 97 = 25
+
+
+int[] sarr = new int[26]; a,n,a,g,r,a,m
+
+'a' - 97 = 97 - 97 = 0th index counter = 3
+'n' - 97 = 110 - 97 = 13th index counter = 1
+'g' - 97 = 103 - 97 = 6th index counter = 1
+'r' - 97 = 114 - 97 = 17th index counter = 1
+'m' - 97 = 109 - 97 = 12th index counter = 1
+
+int[] tarr = new int[26]; n,a,g,a,r,a,m 
+
+'n' - 97 = 110 - 97 = 13th index counter = 1
+'a' - 97 = 97 - 97 = 0th index counter = 3
+'g' - 97 = 103 - 97 = 6th index counter = 1
+'r' - 97 = 114 - 97 = 17th index counter = 1
+'m' - 97 = 109 - 97 = 12th index counter = 1
+***********************
+
+Map<Character,Integer> 
+
+	smap [ (a=3), (n=1), (r=1), (m=1)]  //a,n,a,g,r,a,m
+
+	tmap [ (a=2), (n=1), (r=1), (m=1)] //n,a,g,a,r,a,m 
+
+
+TwoSum :
+
+Input: nums = [3,2,4], target = 6
+
+
+Map<Integer,Integer> (key:Element, value:index)
+
+
+map[]
+
+index:0 --> value = 3  
+		
+		is remaining contains in Map ?
+		remaining = target - value = 6-3 = 3 
+		3 not present in Map 
+
+add current value to map 
+
+	map[ (3 = 0)]
+
+
+index = 1 --> value = 2
+
+		is remaining contains in Map ?
+		remaining = target - value = 6-2 = 4
+		4 not present in Map 
+		so add current value to map
+
+	map[ (3 = 0), (2 = 1)]
+
+
+index = 2 --> value = 4
+
+		is remaining contains in Map ?
+		remaining = target - value = 6-4 = 2
+		2  present in Map 
+		so return new int[] {map.get(2), index} = 
+			new int[]{1,2}
+
+Time Complexity : O(n)
+Space Compleixty : O(n)
+
+**************
+
+Group Anagrams :
+
+Input: strs = ["eat","tea","tan","ate","nat","bat"]
+
+
+			[ ["eat","tea","ate"] , ["tan", "nat"] , ["bat"]]
+
+			e:1 t:1 a:1 --> #1#0#0#----#1#1#
+
+Map<String,List<String>>
+
+

@@ -45,7 +45,7 @@ public class ListStreamingAPI2 {
     }
 }
 
-class TravelFactory
+class  TravelFactory
 {
     private static List<Bus> busList = new LinkedList<>();
 
